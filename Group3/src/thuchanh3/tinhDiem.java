@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package thuchanh3;
 
 /**
@@ -60,7 +57,7 @@ public class tinhDiem extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
-
+        //Nhập điểm 
         jLabel2.setText("Điểm chuyên cần: ");
 
         jLabel3.setText("*10%");
@@ -76,7 +73,7 @@ public class tinhDiem extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-
+        //Hiển thị phần trăm mỗi cột điểm
         jLabel7.setText("*15%");
 
         jLabel8.setText("*20%");
@@ -201,13 +198,16 @@ public class tinhDiem extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        //Lấy 4 cột điểm
         double diemcc = Integer.parseInt(jTextField1.getText());
         double diemtk = Integer.parseInt(jTextField2.getText());
         double diemgk = Integer.parseInt(jTextField3.getText());
         double diemck = Integer.parseInt(jTextField4.getText());
+        //Dùng hàm "tinh()" để tính điểm
         tinh a= new tinh();
         double diemHS10 = a.tinhD(diemcc, diemtk, diemgk, diemck);
         this.jLabel10.setText("Điểm tổng: "+diemHS10);
+        //Quy đổi điểm hệ số 10 qua hệ số 4
         quydoi aa= new quydoi();
         String hocLuc = aa.quyDoi4(diemHS10);
         this.jLabel12.setText(hocLuc);
@@ -215,6 +215,7 @@ public class tinhDiem extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        //Reset lại ban đầu
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
